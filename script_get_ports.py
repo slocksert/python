@@ -25,5 +25,5 @@ try:
 
         s.close()
 except KeyboardInterrupt:
-    print("Closed by user...Keyboard Interruption")
+    print("  Closed by user...Keyboard Interruption")
     sys.exit()

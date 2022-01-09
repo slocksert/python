@@ -19,6 +19,7 @@ try:
             elif sentido == 'e':
                 angulo = int(input("Quanto para esquerda você quer rotacionar?\n"))
                 t.left(angulo)
+            t.forward(distancia)
         if direção == 't':
             distancia = int(input("Quantos pixels você quer andar?\n"))
             sentido = input("Agora, para qual lado você quer virar? d:direita ou e:esquerda\n")
@@ -28,7 +29,7 @@ try:
             elif sentido == 'e':
                 angulo = int(input("Quanto para esquerda você quer rotacionar?\n"))
                 t.left(angulo)
-        t.forward(distancia)
+            t.backward(distancia)
         play =input("Deseja continuar andando? s/n \n")
         if play == 's':
             continue

@@ -1,4 +1,3 @@
-
 from turtle import Turtle
 import sys
 
@@ -10,30 +9,33 @@ t.speed(1)
 
 try:
     while True:
-        direção=(input("Quer ir para trás ou para frente? f/t \n"))
-        distancia=int(input("E Quantos pixels quer andar?\n"))
-        sentido=input("Quer virar para qual lado? d/e/p \n")
-        angulo=int(input("Quantos graus deseja rotacionar?\nPara não rotacionar utilize '0'\n"))
-        
-
-        if sentido == 'd':
-            t.right(angulo)
-            if direção == 'f':
-                t.forward(distancia)
-        elif sentido == 'e':
-            t.left(angulo)
-            if direção == 't':
-                t.backward(distancia)
-        play=input("Deseja continuar andando? s/n\n")
+        direção = input("Para qual direção devemos ir? f:frente ou t:trás\n")
+        if direção == 'f':
+            distancia = int(input("Quantos pixels você quer andar?\n"))
+            sentido = input("Agora, para qual lado você quer virar? d:direita ou e:esquerda\n")
+            if sentido == 'd':
+                angulo = int(input("Quanto para direita você quer rotacionar?\n"))
+                t.right(angulo)
+            elif sentido == 'e':
+                angulo = int(input("Quanto para esquerda você quer rotacionar?\n"))
+                t.left(angulo)
+        if direção == 't':
+            distancia = int(input("Quantos pixels você quer andar?\n"))
+            sentido = input("Agora, para qual lado você quer virar? d:direita ou e:esquerda\n")
+            if sentido == 'd':
+                angulo = int(input("Quanto para direita você quer rotacionar?\n"))
+                t.right(angulo)
+            elif sentido == 'e':
+                angulo = int(input("Quanto para esquerda você quer rotacionar?\n"))
+                t.left(angulo)
+        t.forward(distancia)
+        play =input("Deseja continuar andando? s/n \n")
         if play == 's':
             continue
-        elif play == 'n':
-            break
         else:
+            print("Obrigado por jogar")
             break
 
 except KeyboardInterrupt:
     print("Programa fechado pelo user")
     sys.exit()
-
-    

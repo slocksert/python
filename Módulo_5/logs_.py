@@ -6,6 +6,8 @@ warning
 error
 critical
 """
+
+
 def email_correto():
     if email == 'x@gmail.com':
         return True
